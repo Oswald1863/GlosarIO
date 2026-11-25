@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <meta name="description" content="Índice de los conceptos 1 al 53 del Bloque 1 del glosario de Entrada y Salida." />
+    <title>Bloque 1 — Hardware y software de I/O</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conceptos">Saltar a los conceptos</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Volver al menú principal">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>archivo<span class="brand-dot">.</span>io</span>
+      </a>
+      <nav class="top-nav" aria-label="Navegación principal">
+        <a href="index.html#indice">Índice general</a>
+        <a class="nav-cta" href="index.html">Menú principal <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="detail-hero" aria-labelledby="detail-title">
+        <a class="back-link" href="index.html#bloque-1"><span aria-hidden="true">←</span> Menú de bienvenida</a>
+        <div class="detail-hero-grid">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> Bloque 01 · Conceptos 1—53</p>
+            <h1 id="detail-title">Hardware y software<br />de <em>Entrada / Salida.</em></h1>
+            <p class="detail-hero-description">Explora los temas y subtemas de este bloque. Cada concepto enlaza con su página externa correspondiente.</p>
+          </div>
+          <div class="detail-stat"><strong>53</strong><span>conceptos<br />en este bloque</span></div>
+        </div>
+        <nav class="subtopic-nav" aria-label="Temas del Bloque 1">
+          <a href="#tema-1-1">Dispositivos de I/O</a>
+          <a href="#tema-1-2">Controladores</a>
+          <a href="#tema-2-1">Objetivos del software</a>
+          <a href="#tema-2-2">Interrupciones</a>
+          <a href="#tema-2-3">Manejador de dispositivos</a>
+        </nav>
+      </section>
+
+      <section class="detail-content" id="conceptos" aria-labelledby="concept-list-title">
+        <div class="detail-content-heading">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> Índice del bloque</p>
+            <h2 id="concept-list-title">Elige un concepto<br /><em>para continuar.</em></h2>
+          </div>
+          <p class="section-note">Consulta los enlaces disponibles. Los conceptos restantes conservan sus direcciones provisionales.</p>
+        </div>
+        <div class="block-detail-groups" id="block-concepts" data-block-number="1"></div>
+        <script>
+        (() => {
+          const normalize = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+          const root = document.getElementById("block-concepts");
+          const resources = [...document.querySelectorAll(".linked-resources li a")];
+          function update() {
+            for (const a of root.querySelectorAll("a")) {
+              const label = normalize(a.textContent).replace(/^\d+ /,"").replace(/ (abrir|ver|consultar)( concepto| enlace)?$/,"");
+              const match = resources.find(r => normalize(r.textContent) === label);
+              if (match) { a.href = match.href; a.target = "_blank"; a.rel = "noopener noreferrer"; }
+            }
+          }
+          new MutationObserver(update).observe(root, {childList:true,subtree:true});
+          update();
+        })();
+        </script>
+      </section>
+
+      <nav class="block-pagination" aria-label="Navegación entre bloques">
+        <a class="page-link page-link-prev" href="index.html#bloques"><span>MENÚ PRINCIPAL</span><strong>Ver los tres bloques</strong><b aria-hidden="true">←</b></a>
+        <a class="page-link page-link-next" href="bloque-2.html"><span>BLOQUE SIGUIENTE</span><strong>Bloque 2 · Software y discos</strong><b aria-hidden="true">→</b></a>
+      </nav>
+
+      <section class="closing-banner" aria-label="Cierre">
+        <span class="closing-symbol" aria-hidden="true">↗</span>
+        <p>Continúa explorando<br /><em>el glosario completo.</em></p>
+        <a href="index.html#indice">Volver al índice <span aria-hidden="true">↑</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>archivo<span class="brand-dot">.</span>io</span></a>
+      <span>Bloque 1 · Conceptos 1—53</span>
+      <a class="footer-credits" href="index.html#creditos">Créditos y fuentes</a>
+    </footer>
+  </body>
+</html>
